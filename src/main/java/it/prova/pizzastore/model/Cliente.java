@@ -1,14 +1,11 @@
 package it.prova.pizzastore.model;
 
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "ordine")
+@Table(name = "cliente")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +19,8 @@ public class Cliente {
     private String via;
     @Column(name = "citta")
     private String citta;
-    @Column(name = "numeroCivico")
-    private String numero_civico;
+    @Column(name = "numero_civico")
+    private String numeroCivico;
     @Column(name = "telefono")
     private String telefono;
     @Column(name = "attivo")

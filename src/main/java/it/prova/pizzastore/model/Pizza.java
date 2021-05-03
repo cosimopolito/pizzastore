@@ -22,8 +22,7 @@ public class Pizza {
 	private Integer prezzoBase;
 	@Column(name = "attivo")
 	private Integer attivo;
-	@ManyToMany
-	@JoinTable(name = "pizza_ingrediente", joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id", referencedColumnName = "ID"))
+	@ManyToMany(mappedBy = "pizze")
 	private Set<Ingrediente> ingredienti = new HashSet<>(0);
 
 	@ManyToMany(mappedBy = "pizze")

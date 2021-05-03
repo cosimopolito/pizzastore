@@ -14,11 +14,12 @@ public class Ingrediente {
     @Column(name = "descrizione")
     private String descrizione;
     @Column(name = "prezzo")
-    private Integer prezzo;
+    private Double prezzo;
     @Column(name = "codice")
     private String codice;
-    @ManyToMany(mappedBy = "ingredienti")
-    private Set<Pizza> pizze = new HashSet<>(0);
+    @ManyToMany
 
+    @JoinTable(name = "pizza_ingrediente", joinColumns = @JoinColumn(name = "ingrediente_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"))
+    private Set<Pizza> pizze = new HashSet<>(0);
 
 }

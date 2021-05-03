@@ -19,6 +19,8 @@ public class Ordine {
     private String codice;
     @Column(name = "closed")
     private Boolean closed;
+    @Column(name = "costo_totale")
+    private Double costoTotale;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id")
@@ -31,4 +33,6 @@ public class Ordine {
     @ManyToMany
     @JoinTable(name = "ordine_pizza", joinColumns = @JoinColumn(name = "ordine_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"))
     private Set<Pizza> pizze = new HashSet<>(0);
+
+
 }
