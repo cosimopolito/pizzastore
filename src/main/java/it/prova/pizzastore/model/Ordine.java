@@ -35,4 +35,79 @@ public class Ordine {
     private Set<Pizza> pizze = new HashSet<>(0);
 
 
+    public Ordine(Date dataOrdine, String codice) {
+        this.dataOrdine = dataOrdine;
+        this.codice = codice;
+    }
+
+    public Ordine(Long id, Date dataOrdine, String codice) {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDataOrdine() {
+        return dataOrdine;
+    }
+
+    public void setDataOrdine(Date dataOrdine) {
+        this.dataOrdine = dataOrdine;
+    }
+
+    public String getCodice() {
+        return codice;
+    }
+
+    public void setCodice(String codice) {
+        this.codice = codice;
+    }
+
+    public Double getCostoTotale() {
+        return costoTotale;
+    }
+
+    public void setCostoTotale(Double costoTotale) {
+        this.costoTotale = costoTotale;
+    }
+
+    public Boolean getClosed() {
+        return closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
+    public void setUtente(Utente utente) {
+        this.utente = utente;
+    }
+
+    public Set<Pizza> getPizze() {
+        return pizze;
+    }
+
+    public void setPizze(Set<Pizza> pizze) {
+        this.pizze = pizze;
+    }
 }
+
+
+

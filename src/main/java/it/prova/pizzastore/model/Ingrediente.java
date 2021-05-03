@@ -22,4 +22,5 @@ public class Ingrediente {
     @JoinTable(name = "pizza_ingrediente", joinColumns = @JoinColumn(name = "ingrediente_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"))
     private Set<Pizza> pizze = new HashSet<>(0);
 
+
 }
