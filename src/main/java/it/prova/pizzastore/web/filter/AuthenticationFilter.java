@@ -21,14 +21,15 @@ import org.springframework.stereotype.Component;
 public class AuthenticationFilter implements Filter {
 
 	public static final String HOME_PATH = "";
-	public static final String[] EXCLUDED_URLS = { "/login.jsp", "/LoginServlet", "/LogoutServlet", "/assets/" };
+	public static final String REGISTRATION_PATH = "/registration/";
+	public static final String[] EXCLUDED_URLS = { "/login.jsp", "/LoginServlet", "/LogoutServlet", "/assets/" , REGISTRATION_PATH};
 
 	private static final String USER_LOGGED_IN_ATTRIBUTE_NAME = "userInfo";
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("Nel filtro di check user in session");
-
+		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 
@@ -41,6 +42,11 @@ public class AuthenticationFilter implements Filter {
 		// se non lo e' bisogna controllare sia sessione che percorsi protetti
 		if (!isPathInWhiteList(pathAttuale) && !isUserLoggedIn(httpRequest)) {
 			httpResponse.sendRedirect(httpRequest.getContextPath());
+			return;
+		}
+		if (isRegistrationPath(pathAttuale) && isUserLoggedIn(httpRequest)) {
+			request.setAttribute("errorMessage", "sei già registrato");
+			request.getRequestDispatcher(HOME_PATH).forward(httpRequest, httpResponse);
 			return;
 		}
 
@@ -59,6 +65,15 @@ public class AuthenticationFilter implements Filter {
 				return true;
 			}
 		}
+		return false;
+	}
+
+	public static boolean isRegistrationPath(String requestPath) {
+		// bisogna controllare che se il path risulta proprio "" oppure se
+		// siamo in presenza un url 'libero'
+		if (requestPath.contains(REGISTRATION_PATH))
+			return true;
+
 		return false;
 	}
 

@@ -7,7 +7,7 @@
 	
 	  <!-- Bootstrap CSS -->
 	  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" >
-	
+
 	  <title>Accedi</title>
 	  
 	  <!-- Favicons -->
@@ -62,7 +62,8 @@
 		    </label>
 		  </div>
 		  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-		  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+			<a href="${pageContext.request.contextPath}/registration/RegistrationServlet"  class="btn btn-lg btn-primary btn-block">Sign up </a>
+ 		  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
 		</form>
 	</body>
 </html>
