@@ -63,7 +63,7 @@ public class UtenteDTO {
 		this.ruoli = ruolo;
 	}
 
-	public UtenteDTO(String username, String password, String nome, String cognome) {
+	public UtenteDTO(String nome, String cognome, String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -77,6 +77,8 @@ public class UtenteDTO {
 		this.nome = nome;
 		this.cognome = cognome;
 	}
+
+
 
 	public Set<Ruolo> getRuoli() {
 		return ruoli;
@@ -159,13 +161,9 @@ public class UtenteDTO {
 			validationResult.add("Il campo 'Cognome' non può essere vuoto");
 		if (StringUtils.isBlank(this.username))
 			validationResult.add("Il campo 'username' non può essere vuoto");
-		if (this.stato == null)
-			validationResult.add("Il campo 'stato' non può essere vuoto");
-		if (this.dateCreated == null)
-			validationResult.add("Il campo 'dateCreated' non può essere vuoto");
-		if (this.ruoli.isEmpty()) {
-			validationResult.add("Il campo 'ruoli' non può essere vuoto");
-		}
+		if (this.password == null)
+			validationResult.add("Il campo 'password' non può essere vuoto");
+
 		this.setErrors(validationResult);
 	}
 
@@ -183,6 +181,13 @@ public class UtenteDTO {
 				utenteModel.getRuoli());
 	}
 
+	public static UtenteDTO createUtenteDTOFromRegistrationParams(String nomeParam, String cognomeParam, String usernameParam, String passwordParam) {
+		UtenteDTO result = new UtenteDTO(nomeParam, cognomeParam, usernameParam, passwordParam);
+		result.setStato(StatoUtente.CREATO);
+		return result;
+	}
+
+
 	public static UtenteDTO createUtenteDTOFromParams(String usernameParam, String nomeParam, String cognomeParam,
 			String dateCreatedParam, String statoParam, Set<Ruolo> ruoliParam) {
 
@@ -196,7 +201,7 @@ public class UtenteDTO {
 	public static UtenteDTO createUtenteDTOFromInsertParams(String usernameParam, String password, String nomeParam,
 			String cognomeParam, Set<Ruolo> ruoliParam) {
 
-		UtenteDTO result = UtenteDTO.createUtenteDTOFromParams(usernameParam, "creato", nomeParam, cognomeParam,
+		UtenteDTO result = UtenteDTO.createUtenteDTOFromParams(usernameParam, password, nomeParam, cognomeParam,
 				ruoliParam);
 		result.setPassword(password);
 		result.setDateCreated(new Date());
@@ -206,7 +211,7 @@ public class UtenteDTO {
 	}
 
 	public static UtenteDTO createUtenteDTOFromParams(String usernameParam, String passwordParam, String nomeParam,
-			String cognomeParam, Set<Ruolo> ruoliParam) {
+													  String cognomeParam, Set<Ruolo> ruoliParam) {
 
 		UtenteDTO result = new UtenteDTO(usernameParam, passwordParam, nomeParam, cognomeParam);
 		result.setRuoli(ruoliParam);

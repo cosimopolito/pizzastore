@@ -1,6 +1,7 @@
 package it.prova.pizzastore;
 
 import it.prova.pizzastore.web.servlet.auth.LoginServlet;
+import it.prova.pizzastore.web.servlet.registration.ExecuteRegistrationServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,17 @@ public class SerlvetRegistrationConfig {
 
     @Autowired
     private LoginServlet loginServlet;
+    @Autowired
+    private ExecuteRegistrationServlet executeRegistrationServlet;
+
+    @Bean
+    public ServletRegistrationBean<ExecuteRegistrationServlet> createExecuteRegistrationServletBean() {
+        ServletRegistrationBean<ExecuteRegistrationServlet> bean = new ServletRegistrationBean<ExecuteRegistrationServlet>(executeRegistrationServlet,
+                "/registration/ExecuteRegistrationServlet");
+        return bean;
+    }
+
+
 
     @Bean
     public ServletRegistrationBean<LoginServlet> createLoginServletBean() {
