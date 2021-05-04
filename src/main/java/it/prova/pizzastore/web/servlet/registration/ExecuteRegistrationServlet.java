@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 @Component
 public class ExecuteRegistrationServlet extends HttpServlet {
@@ -26,6 +26,7 @@ public class ExecuteRegistrationServlet extends HttpServlet {
 
         UtenteDTO utenteDTOInstance = UtenteDTO.createUtenteDTOFromRegistrationParams(nomeParam, cognomeParam, usernameParam,
                 passwordParam);
+        utenteDTOInstance.setDateCreated(new Date());
 
         if (!passwordParam.equals(passwordRepeatParam)) {
             request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione nella password");

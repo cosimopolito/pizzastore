@@ -8,6 +8,7 @@ import it.prova.pizzastore.model.Utente;
 import it.prova.pizzastore.repository.ruolo.RuoloRepository;
 import it.prova.pizzastore.repository.utente.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
