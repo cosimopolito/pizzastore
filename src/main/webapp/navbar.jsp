@@ -8,9 +8,9 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <!--<li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/LoginServlet">Home <span class="sr-only">(current)</span></a>
-            </li>-->
+            <li class="nav-item active">
+                <a class="nav-link" href="${pageContext.request.contextPath}/Home">Home <span class="sr-only">(current)</span></a>
+            </li>
             <c:if test="${userInfo.isPizzaiolo() }">
 
                 <li class="nav-item dropdown">

@@ -18,7 +18,6 @@ public class Ingrediente {
     @Column(name = "codice")
     private String codice;
     @ManyToMany
-
     @JoinTable(name = "pizza_ingrediente", joinColumns = @JoinColumn(name = "ingrediente_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"))
     private Set<Pizza> pizze = new HashSet<>(0);
 

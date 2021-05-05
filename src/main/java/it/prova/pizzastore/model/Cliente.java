@@ -30,6 +30,8 @@ public class Cliente {
     @OneToMany( mappedBy = "cliente")
     Set<Ordine>  ordine = new HashSet<>(0);
 
+    public Cliente() {
+    }
 
     public Cliente(String nome, String cognome, String via, String citta, String numeroCivico, String telefono) {
         this.nome = nome;
