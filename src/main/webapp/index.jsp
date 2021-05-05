@@ -1,4 +1,5 @@
 <!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="it">
   <head>
     
@@ -15,10 +16,10 @@
     <title>Gestione della Raccolta Film</title>
   </head>
   <body>
-  
+
 	<jsp:include page="./navbar.jsp" />
   
-  
+
 	<main role="main">
 
 	  <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -43,13 +44,13 @@
 	    <div class="row">
 	      <div class="col-md-6">
 	        <h2>Gestione Registi</h2>
-	        <p>Questa funzionalità è relativa alla Gestione dei Registi</p>
-	        <p><a class="btn btn-primary" href="PrepareSearchRegistaServlet" role="button">Vai alla Funzionalità &raquo;</a></p>
+	        <p>Questa funzionalitï¿½ ï¿½ relativa alla Gestione dei Registi</p>
+	        <p><a class="btn btn-primary" href="PrepareSearchRegistaServlet" role="button">Vai alla Funzionalitï¿½ &raquo;</a></p>
 	      </div>
 	      <div class="col-md-6">
 	        <h2>Gestione Film</h2>
-	        <p>Questa funzionalità è relativa alla Gestione di Film</p>
-	        <p><a class="btn btn-primary" href="PrepareSearchFilmServlet" role="button">Vai alla Funzionalità &raquo;</a></p>
+	        <p>Questa funzionalitï¿½ ï¿½ relativa alla Gestione di Film</p>
+	        <p><a class="btn btn-primary" href="PrepareSearchFilmServlet" role="button">Vai alla Funzionalitï¿½ &raquo;</a></p>
 	      </div>
 	    </div>
 	    

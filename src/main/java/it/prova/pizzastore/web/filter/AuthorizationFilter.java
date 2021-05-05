@@ -19,6 +19,8 @@ import org.springframework.stereotype.Component;
 public class AuthorizationFilter implements Filter {
 	
 	public static final String[] ADMIN_URLS = { "/utente/" };
+	public static final String[] FATTORINO_URLS = { "/fattorino/" };
+	public static final String[] PIZZAIOLO_URLS = { "/pizzaiolo/" };
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
