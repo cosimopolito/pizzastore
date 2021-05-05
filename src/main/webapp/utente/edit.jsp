@@ -4,7 +4,7 @@
 <html lang="it">
 <head>
 	<jsp:include page="../header.jsp" />
-	<title>Inserisci nuovo</title>
+	<title>Modifica elemento</title>
 	
 	<!-- style per le pagine diverse dalla index -->
     <link href="${pageContext.request.contextPath}/assets/css/global.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 		
 		<div class='card'>
 		    <div class='card-header'>
-		        <h5>Inserisci nuovo elemento</h5> 
+		        <h5>Modifica elemento</h5>
 		    </div>
 		    <div class='card-body'>
 		    

@@ -1,6 +1,7 @@
 package it.prova.pizzastore;
 
 import it.prova.pizzastore.web.servlet.auth.LoginServlet;
+import it.prova.pizzastore.web.servlet.ingrediente.*;
 import it.prova.pizzastore.web.servlet.registration.ExecuteRegistrationServlet;
 import it.prova.pizzastore.web.servlet.utente.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,83 @@ public class SerlvetRegistrationConfig {
     private PrepareUpdateUtenteServlet prepareUpdateUtenteServlet;
     @Autowired
     private ExecuteUpdateUtenteServlet executeUpdateUtenteServlet;
+    @Autowired
+    private PrepareSearchIngredienteServlet prepareSearchIngredienteServlet;
+    @Autowired
+    private ExecuteSearchIngredienteServlet executeSearchIngredienteServlet;
+    @Autowired
+    private ExecuteVisualizzaIngredienteServlet executeVisualizzaIngredienteServlet;
+    @Autowired
+    private ExecuteListIngredienteServlet executeListIngredienteServlet;
+    @Autowired
+    private PrepareInsertIngredienteServlet prepareInsertIngredienteServlet;
+    @Autowired
+    private ExecuteInsertIngredienteServlet executeInsertIngredienteServlet;
+    @Autowired
+    private PrepareModificaIngredienteServlet prepareModificaIngredienteServlet;
+    @Autowired
+    private ExecuteModificaIngredienteServlet executeModificaIngredienteServlet;
+
+    @Bean
+    public ServletRegistrationBean<ExecuteModificaIngredienteServlet> createExecuteModificaIngredienteServletBean() {
+        ServletRegistrationBean<ExecuteModificaIngredienteServlet> bean = new ServletRegistrationBean<ExecuteModificaIngredienteServlet>(
+                executeModificaIngredienteServlet, "/ingrediente/ExecuteModificaIngredienteServlet");
+        return bean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<PrepareModificaIngredienteServlet> createPrepareModificaIngredienteServletBean() {
+        ServletRegistrationBean<PrepareModificaIngredienteServlet> bean = new ServletRegistrationBean<PrepareModificaIngredienteServlet>(
+                prepareModificaIngredienteServlet, "/ingrediente/PrepareModificaIngredienteServlet");
+        return bean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<ExecuteInsertIngredienteServlet> createExecuteInsertIngredienteServletBean() {
+        ServletRegistrationBean<ExecuteInsertIngredienteServlet> bean = new ServletRegistrationBean<ExecuteInsertIngredienteServlet>(
+                executeInsertIngredienteServlet, "/ingrediente/ExecuteInsertIngredienteServlet");
+        return bean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<PrepareInsertIngredienteServlet> createPrepareInsertIngredienteServletBean() {
+        ServletRegistrationBean<PrepareInsertIngredienteServlet> bean = new ServletRegistrationBean<PrepareInsertIngredienteServlet>(
+                prepareInsertIngredienteServlet, "/ingrediente/PrepareInsertIngredienteServlet");
+        return bean;
+    }
+
+
+
+    @Bean
+    public ServletRegistrationBean<ExecuteListIngredienteServlet> createExecuteListIngredienteServletBean() {
+        ServletRegistrationBean<ExecuteListIngredienteServlet> bean = new ServletRegistrationBean<ExecuteListIngredienteServlet>(
+                executeListIngredienteServlet, "/ingrediente/ExecuteListIngredienteServlet");
+        return bean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<ExecuteVisualizzaIngredienteServlet> createExecuteVisualizzaIngredienteServletBean() {
+        ServletRegistrationBean<ExecuteVisualizzaIngredienteServlet> bean = new ServletRegistrationBean<ExecuteVisualizzaIngredienteServlet>(
+                executeVisualizzaIngredienteServlet, "/ingrediente/ExecuteVisualizzaIngredienteServlet");
+        return bean;
+    }
+
+
+    @Bean
+    public ServletRegistrationBean<ExecuteSearchIngredienteServlet> createExecuteSearchIngredienteServletBean() {
+        ServletRegistrationBean<ExecuteSearchIngredienteServlet> bean = new ServletRegistrationBean<ExecuteSearchIngredienteServlet>(
+                executeSearchIngredienteServlet, "/ingrediente/ExecuteSearchIngredienteServlet");
+        return bean;
+    }
+
+
+    @Bean
+    public ServletRegistrationBean<PrepareSearchIngredienteServlet> createPrepareSearchIngredienteServletBean() {
+        ServletRegistrationBean<PrepareSearchIngredienteServlet> bean = new ServletRegistrationBean<PrepareSearchIngredienteServlet>(
+                prepareSearchIngredienteServlet, "/ingrediente/PrepareSearchIngredienteServlet");
+        return bean;
+    }
+
 
     @Bean
     public ServletRegistrationBean<ExecuteUpdateUtenteServlet> createExecuteUpdateUtenteServletBean() {

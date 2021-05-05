@@ -52,7 +52,7 @@
             <div class="col-md-6">
                 <h2>Gestione Ingredienti</h2>
                 <p>Questa funzionalit� � realtiva alla Gestione degli igredienti</p>
-                <p><a class="btn btn-primary" href="PrepareSearchUtenteServlet" role="button">Vai alla Funzionalit� &raquo;</a></p>
+                <p><a class="btn btn-primary" href="${pageContext.request.contextPath}/ingrediente/PrepareSearchIngredienteServlet" role="button">Vai alla Funzionalit� &raquo;</a></p>
             </div>
             <div class="col-md-6">
                 <h2>Gestione pizze</h2>
