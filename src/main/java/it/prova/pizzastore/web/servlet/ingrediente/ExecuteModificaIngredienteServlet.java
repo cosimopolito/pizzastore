@@ -32,16 +32,13 @@ public class ExecuteModificaIngredienteServlet extends HttpServlet {
 
 		try {
 
-			long idIngrediente = Long.parseLong(idParam);
-			Ingrediente ingredienteInstance = ingredienteService.caricaSingoloElemento(idIngrediente);
-
 			IngredienteDTO ingredienteDaValidare = IngredienteDTO.createIngredienteDTOFromParams(idParam, descrizioneParam,
 					prezzoParam, codiceParam);
 
 			ingredienteDaValidare.validate();
 
 			if (ingredienteDaValidare.hasErrors()) {
-				request.setAttribute("ingrediomteDaModificare", ingredienteDaValidare);
+				request.setAttribute("ingredienteDaModificare", ingredienteDaValidare);
 				request.getRequestDispatcher("/ingrediente/edit.jsp").forward(request, response);
 				return;
 			}
