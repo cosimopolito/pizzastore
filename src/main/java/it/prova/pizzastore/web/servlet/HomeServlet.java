@@ -33,13 +33,13 @@ public class HomeServlet extends HttpServlet {
 
     private RequestDispatcher getRequestDispatcherIfUserLoggedInOrNot(HttpServletRequest request) {
         if (AuthenticationFilter.isUserLoggedIn(request) && AuthenticationFilter.getUserLoggedIn(request).isAdmin()) {
-            return request.getRequestDispatcher("/utente/index.jsp");
+            return request.getRequestDispatcher("/utente/homeAdmin.jsp");
         }
         if (AuthenticationFilter.isUserLoggedIn(request) && AuthenticationFilter.getUserLoggedIn(request).isPizzaiolo()) {
-            return request.getRequestDispatcher("/pizzaiolo/index.jsp");
+            return request.getRequestDispatcher("/pizzaiolo/homePizzaiolo.jsp");
         }
         if (AuthenticationFilter.isUserLoggedIn(request) && AuthenticationFilter.getUserLoggedIn(request).isFattorino()) {
-            return request.getRequestDispatcher("/fattorino/index.jsp");
+            return request.getRequestDispatcher("/fattorino/homeFattorino.jsp");
         }
         return request.getRequestDispatcher("login.jsp");
     }

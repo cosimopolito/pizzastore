@@ -1,6 +1,5 @@
 package it.prova.pizzastore.model;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,6 +27,9 @@ public class Pizza {
 	@ManyToMany(mappedBy = "pizze")
 	private Set<Ordine> ordini = new HashSet<>(0);
 
+
+	public Pizza() {
+	}
 
 	public Pizza(Long id, String descrizione, String codice, Integer prezzoBase) {
 		this.id =id;

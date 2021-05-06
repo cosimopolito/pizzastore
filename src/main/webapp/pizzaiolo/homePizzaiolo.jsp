@@ -57,7 +57,7 @@
             <div class="col-md-6">
                 <h2>Gestione pizze</h2>
                 <p>Questa funzionalit� � realtiva alla gestione delle pizze</p>
-                <p><a class="btn btn-primary" href="PrepareSearchOrdineServlet" role="button">Vai alla Funzionalit� &raquo;</a></p>
+                <p><a class="btn btn-primary" href="${pageContext.request.contextPath}/pizza/PrepareSearchPizzaServlet" role="button">Vai alla Funzionalit� &raquo;</a></p>
             </div>
             <div class="col-md-6">
                 <h2>Gestione Clienti</h2>

@@ -73,7 +73,7 @@ public class ExecuteUpdateUtenteServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/home").forward(request, response);
+			request.getRequestDispatcher("home").forward(request, response);
 			return;
 		}
 		response.sendRedirect("ExecuteListUtenteServlet?operationResult=SUCCESS");

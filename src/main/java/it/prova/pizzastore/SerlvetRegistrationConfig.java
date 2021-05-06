@@ -2,6 +2,7 @@ package it.prova.pizzastore;
 
 import it.prova.pizzastore.web.servlet.auth.LoginServlet;
 import it.prova.pizzastore.web.servlet.ingrediente.*;
+import it.prova.pizzastore.web.servlet.pizza.PrepareSearchPizzaServlet;
 import it.prova.pizzastore.web.servlet.registration.ExecuteRegistrationServlet;
 import it.prova.pizzastore.web.servlet.utente.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,16 @@ public class SerlvetRegistrationConfig {
     private PrepareModificaIngredienteServlet prepareModificaIngredienteServlet;
     @Autowired
     private ExecuteModificaIngredienteServlet executeModificaIngredienteServlet;
+    @Autowired
+    private PrepareSearchPizzaServlet prepareSearchPizzaServlet;
+
+    @Bean
+    public ServletRegistrationBean<PrepareSearchPizzaServlet> createPrepareSearchPizzaServletBean() {
+        ServletRegistrationBean<PrepareSearchPizzaServlet> bean = new ServletRegistrationBean<PrepareSearchPizzaServlet>(
+                prepareSearchPizzaServlet, "/pizza/PrepareSearchPizzaServlet");
+        return bean;
+    }
+
 
     @Bean
     public ServletRegistrationBean<ExecuteModificaIngredienteServlet> createExecuteModificaIngredienteServletBean() {
